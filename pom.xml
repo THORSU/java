@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.youmeek</groupId>
-    <artifactId>ssm</artifactId>
+    <artifactId>java</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ssm</name>
+    <name>java</name>
     <description>
         为了方便以后的一些问题的讲解特地准备一个最精简的 SpringMVC+Spring+Mybatis 框架整合，方便以后的一些问题的演示
     </description>
@@ -74,8 +74,8 @@
         <!--插件版本变量 end-->
 
         <!--其他变量 start-->
-        <war-name.version>ssm</war-name.version>
-        <jdk.version>1.7</jdk.version>
+        <war-name.version>java</war-name.version>
+        <jdk.version>1.8</jdk.version>
 
         <tomcat-port.version>8080</tomcat-port.version>
         <tomcat-uri-encoding.version>UTF-8</tomcat-uri-encoding.version>
@@ -382,28 +382,6 @@
             </resource>
         </resources>
         <plugins>
-            <!-- Compiler 插件, 设定JDK版本 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
-                <configuration>
-                    <source>${jdk.version}</source>
-                    <target>${jdk.version}</target>
-                    <encoding>UTF-8</encoding>
-                    <showWarnings>true</showWarnings>
-                </configuration>
-            </plugin>
-
-            <!-- war 打包插件, 设定war包名称不带版本号 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>${maven-war-plugin.version}</version>
-                <configuration>
-                    <warName>${war-name.version}</warName>
-                </configuration>
-            </plugin>
 
             <!-- tomcat6插件 -->
             <!--https://tomcat.apache.org/maven-plugin-2.0/tomcat6-maven-plugin/run-mojo.html-->
@@ -473,39 +451,12 @@
                 <version>${maven-resources-plugin.version}</version>
             </plugin>
 
-            <!-- source插件 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>${maven-source-plugin.version}</version>
-            </plugin>
-
-            <!-- install插件 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-install-plugin</artifactId>
-                <version>${maven-install-plugin.version}</version>
-            </plugin>
 
             <!-- clean插件 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>${maven-clean-plugin.version}</version>
-            </plugin>
-
-            <!-- ant插件 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>${maven-antrun-plugin.version}</version>
-            </plugin>
-
-            <!-- dependency插件 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>${maven-dependency-plugin.version}</version>
             </plugin>
 
         </plugins>
